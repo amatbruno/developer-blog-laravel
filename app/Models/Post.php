@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    //Relations for User Model
+    //Relations for Post Model
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
