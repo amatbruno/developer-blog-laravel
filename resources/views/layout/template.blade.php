@@ -8,7 +8,7 @@
     @stack('styles')
 </head>
 
-<body class="bg-slate-900 font-sans">
+<body>
     @yield('contenido')
 </body>
 

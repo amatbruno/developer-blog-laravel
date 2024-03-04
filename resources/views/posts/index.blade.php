@@ -1,6 +1,11 @@
 @extends('layout/template')
 @push('styles')
 @vite('resources/css/app.css')
+<style>
+    body {
+        background-color: #111827;
+    }
+</style>
 @endpush
 
 @section('title', 'Posts')
@@ -8,7 +13,7 @@
 <main>
     <div class="container py-4">
         <h1 class="text-5xl text-white text-center">Posts Feed</h2>
-        <a class="bg-red-500 rounded-md p-2 text-white" href="{{ url('posts/create') }}">Add a post</a>
+            <a class="bg-red-500 rounded-md p-2 text-white" href="{{ url('posts/create') }}">Add a post</a>
     </div>
 </main>
 @endsection
