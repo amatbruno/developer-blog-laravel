@@ -8,6 +8,7 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
+        background-color: #111827;
     }
 
     main {
@@ -22,7 +23,7 @@
 </style>
 @endpush
 
-@section('title', 'Add Post')
+@section('title', 'New Post | Blog')
 @section('contenido')
 <main>
     <div>
@@ -42,18 +43,73 @@
 
         <h1 class="text-white text-4xl text-center pb-8">Add A New Post</h1>
 
+
+        @if ($errors->any())
+        <div class="flex text-start p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 
+        dark:bg-gray-800 dark:text-red-400" role="alert">
+            <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 
+                0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 
+                1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Danger</span>
+            <div>
+                <span class="font-medium">Ensure that these requirements are met and try again:</span>
+                <ul class="mt-1.5 list-disc list-inside">
+                    @foreach ($errors->all() as $err)
+                        <li>{{ $err }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        @endif
+
         <div>
-            <form class="max-w-md mx-auto">
+            <form class="max-w-md mx-auto" action="{{ url('posts') }}" method="post">
+
+                @csrf
+
                 <div class="relative z-0 w-full mb-5 group text-start">
-                    <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
-                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Post title</label>
+                    <input type="text" name="title" id="title" class="block py-2.5 px-0 w-full 
+                    text-md text-gray-900 bg-transparent 
+                    border-0 border-b-2 border-gray-300 appearance-none 
+                    dark:text-white dark:border-gray-600 
+                    dark:focus:border-red-500 focus:outline-none 
+                    focus:ring-0 focus:border-red-600 peer" value="{{ old('title') }}" placeholder=" " />
+                    <label for="title" class="peer-focus:font-medium 
+                    absolute text-sm text-gray-500 dark:text-gray-400 
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 
+                    origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 
+                    rtl:peer-focus:left-auto peer-focus:text-red-600 
+                    peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 
+                    peer-focus:-translate-y-6">Post title</label>
                 </div>
                 <div class="relative z-0 w-full mb-5 group text-start">
-                    <textarea rows="3" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required></textarea>
-                    <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Content</label>
+                    <textarea rows="2" name="content" id="content" class="block py-2.5 px-0 
+                    w-full text-md text-gray-900 bg-transparent 
+                    border-0 border-b-2 border-gray-300 appearance-none dark:text-white
+                    dark:border-gray-600 dark:focus:border-red-500 focus:outline-none 
+                    focus:ring-0 focus:border-red-600 peer text-balance" value="{{ old('content') }}" placeholder=" "></textarea>
+                    <label for="content" class="peer-focus:font-medium absolute text-sm 
+                    text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 
+                    scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 
+                    peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Content</label>
                 </div>
 
-                <button type="submit" class="text-white bg-red-700 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-900 dark:focus:ring-red-900 transition-colors mt-6">Submit</button>
+                <div class="flex gap-6 justify-center">
+                    <a class="text-white bg-red-700 hover:bg-red-900 
+                focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg 
+                text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 
+                dark:hover:bg-red-900 dark:focus:ring-red-900 transition-colors mt-6" href="{{ url('posts') }}">Go back</a>
+
+                    <button type="submit" class="text-white bg-green-800 hover:bg-green-900 
+                focus:ring-4 focus:outline-none focus:ring-green-400 font-medium rounded-lg 
+                text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-700 
+                dark:hover:bg-green-900 dark:focus:ring-green-900 transition-colors mt-6">Submit</button>
+                </div>
+
             </form>
 
         </div>

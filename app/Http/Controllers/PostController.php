@@ -28,7 +28,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|unique:posts|max:10',
+            'content' => 'required|max:200'
+        ]);
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->save();
+
+        return view("posts.message", ['mssg' => "POST SAVED CORRECTLY"]);
     }
 
     /**

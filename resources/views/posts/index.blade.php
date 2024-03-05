@@ -8,7 +8,7 @@
 </style>
 @endpush
 
-@section('title', 'Posts')
+@section('title', 'Feed Posts | Blog')
 @section('contenido')
 <main>
     <div class="container py-4">
