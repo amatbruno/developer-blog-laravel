@@ -18,7 +18,7 @@
 </style>
 @endpush
 
-@section('title', 'Feed Posts | Blog')
+@section('title', 'Dev Blog | Feed')
 @section('contenido')
 <main>
     <div class="flex flex-col gap-7 w-[350px] lg:w-[950px] md:w-[550px] sm:w-[350px] m-auto">
@@ -36,7 +36,7 @@
     <section class="container mx-auto mt-12 p-6 flex flex-col justify-center items-center gap-14">
         <!--POST CARD-->
         @foreach($posts as $pt)
-        <div class="h-[265px] lg:w-[700px] md:w-[550px] w-[450px] p-4 border-2 border-white 
+        <div class="h-fit lg:w-[800px] md:w-[600px] w-[550px] p-4 border-2 border-white 
         rounded-lg hover:border-red-500 transition-all">
             <div class="flex items-center justify-between pb-5">
                 <div class="flex items-center gap-6">
