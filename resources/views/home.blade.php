@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite('resources/css/app.css')
     <title>Dev Blog | Homepage</title>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -55,7 +54,6 @@
                 <button class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" onclick="{{ url('') }}">Know More</button>
             </div>
         </div>
-
     
     {{-- <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"> --}}
         {{-- @if (Route::has('login'))
@@ -71,17 +69,14 @@
             @endauth
         </div>
         @endif --}}
-
         
     </div>
-
         <div class="flex justify-center mt-12 px-0">
             <div class="text-center text-lg text-gray-100 dark:text-gray-200 sm:text-right sm:ml-0">
                 <p>Laravel v{{ Illuminate\Foundation\Application::VERSION }} | Made by Bruno Amat</p>
             </div>
         </div>
     </main>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>

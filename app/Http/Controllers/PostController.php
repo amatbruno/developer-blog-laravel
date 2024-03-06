@@ -30,7 +30,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:posts|max:10',
+            'title' => 'required|unique:posts|max:15',
             'content' => 'required|max:200'
         ]);
 
@@ -53,17 +53,28 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'max:15|unique:posts,title,' . $id,
+            'content' => 'max:200|required:posts,content,' . $id
+        ]);
+
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->save();
+
+        return view("posts.message", ['mssg' => "POST EDITED CORRECTLY"]);
     }
 
     /**

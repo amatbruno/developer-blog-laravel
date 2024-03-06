@@ -20,19 +20,19 @@
 
 @section('title', 'Dev Blog | Feed')
 @section('contenido')
+<body>
 <main>
     <div class="flex flex-col gap-7 w-[350px] lg:w-[950px] md:w-[550px] sm:w-[350px] m-auto">
         <h1 class="text-5xl text-white mt-10 underline">Posts Feed</h1>
-        <p class="text-gray-400">Discover the new posts by the users! Help others 
+        <p class="text-gray-400 text-lg">Discover the new posts by the users! Help others 
         with issues/doubts or just provide your opinion in some field.</p>
     </div>
-    
     <div class="py-4 flex m-auto justify-center mb-3 mt-3 w-[250px] lg:w-[350px] sm:w-[400px] gap-6">
         <a class="bg-red-600 rounded-md p-2 text-white" href="{{ url('/') }}">Back to homepage</a>
         <a class="bg-red-600 rounded-md p-2 text-white" href="{{ url('posts/create') }}">Add a post</a>
     </div>
 
-    <hr class="border border-red-600 w-[450px] lg:w-[1050px] md:w-[750px] m-auto">
+    <hr class="border border-white w-[450px] lg:w-[1050px] md:w-[750px] m-auto">
 
     <section class="container mx-auto mt-12 p-6 flex flex-col justify-center items-center gap-14">
         <!--POST CARD-->
@@ -45,9 +45,19 @@
                     <h1 class="text-2xl py-3 font-semibold">{{ $pt->title }}</h1>
                 </div>
                 <div class="flex flex-col gap-3 text-end">
-                    <p class="text-gray-300 text-xl font-semibold">Writted by {{ $pt->post_id }}</p>
+                    <p class="text-gray-300 text-xl font-semibold">Writted by {{ $pt->id }}</p>
                     <p class="text-gray-400 text-md">Published at {{ $pt->publish_date }}</p>
                 </div>
+                <a href="{{ url('/posts/'.$pt->id.'/edit') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="hover:stroke-red-600 transition-all" width="24" height="24" 
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" 
+                        stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" 
+                        fill="none"/>
+                        <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                        <path d="M13.5 6.5l4 4" />
+                    </svg>
+                </a>
             </div>
             <hr>
             <h3 class="mt-6 text-xl mb-6">{{ $pt->content }}</h3>
@@ -60,4 +70,5 @@
         @endforeach
     </section>
 </main>
+</body>
 @endsection
