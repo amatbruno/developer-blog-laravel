@@ -18,8 +18,8 @@
         }
 
         #container-blur {
-            background: #ffffff2d;
-            backdrop-filter: blur(12px);
+            background: #d6d6d62d;
+            backdrop-filter: blur(18px);
         }
 
         .mini-container {
@@ -36,27 +36,24 @@
     <main class="bg-red-800 h-[420px]">
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <h1 class="text-8xl text-white font-bold text-center">Developers Blog</h1>
-            
+            <p class="text-white text-3xl text-center mt-16">Discover. Inspire. Thrive.</p>
         </div>
-        <div id="container-blur" class="w-[1600px] h-[600px] m-auto mt-36 rounded-xl flex justify-center items-center gap-36">
-            <div class="mini-container w-[350px] h-fit rounded-xl flex flex-col justify-center items-center p-5">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                class="" viewBox="0 0 64.000000 64.000000"
-                preserveAspectRatio="xMidYMid meet">
-                <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-                fill="white" stroke="white">
-                <path d="M20 320 l0 -260 260 0 260 0 0 96 c0 94 1 97 40 163 22 37 40 77 40
-                88 0 29 -26 53 -56 53 -23 0 -24 3 -24 60 l0 60 -260 0 -260 0 0 -260z m498
-                208 l3 -28 -240 0 -241 0 0 23 c0 13 3 27 7 31 4 3 110 5 237 4 l231 -3 3 -27z
-                m2 -68 c0 -11 -21 -56 -46 -100 l-47 -80 -83 0 -84 0 0 -70 0 -70 59 0 c50 0
-                59 -3 64 -20 3 -11 12 -20 21 -20 17 0 85 62 104 95 10 16 12 9 10 -45 l-3
-                -65 -235 0 -235 0 -3 198 -2 197 240 0 c234 0 240 0 240 -20z"/>
-                <path d="M80 380 l0 -60 70 0 70 0 0 60 0 60 -70 0 -70 0 0 -60z"/></g>
-                </svg>
-                <h1 class="text-white">Create your own post</h1>
-                <button class="text-white">Know More</button>
+        <div id="container-blur" class="w-[1550px] h-[650px] m-auto mt-6 rounded-xl flex justify-center items-center gap-20">
+            <div class="mini-container w-[410px] h-[550px] rounded-xl flex flex-col justify-center items-center p-7">
+                <img class="w-62" src="https://img.icons8.com/external-itim2101-lineal-itim2101/256/FFFFFF/external-blog-copywriting-itim2101-lineal-itim2101.png" alt="blog_img">
+                <h1 class="text-white text-center text-2xl py-5 w-68">Create your own post or just see what peaople is inspired with</h1>
+                <a class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" href="{{ url('posts') }}">Know More</a>
             </div>
-            
+            <div class="mini-container w-[410px] h-[550px] rounded-xl flex flex-col justify-center items-center p-7">
+                <img class="w-62" src="https://img.icons8.com/ios/256/FFFFFF/news.png" alt="blog_img">
+                <h1 class="text-white text-center text-2xl py-5 w-68">Explore the recent services and the upcoming features.</h1>
+                <button class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" onclick="{{ url('') }}">Know More</button>
+            </div>
+            <div class="mini-container w-[410px] h-[550px] rounded-xl flex flex-col justify-center items-center p-7">
+                <img class="w-62" src="https://img.icons8.com/wired/256/FFFFFF/name.png" alt="blog_img">
+                <h1 class="text-white text-center text-2xl py-5 w-68">Create your own post or just see what peaople is inspired with</h1>
+                <button class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" onclick="{{ url('') }}">Know More</button>
+            </div>
         </div>
 
     
@@ -78,12 +75,13 @@
         
     </div>
 
-        <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-            <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) | Made by Bruno Amat
+        <div class="flex justify-center mt-12 px-0">
+            <div class="text-center text-lg text-gray-100 dark:text-gray-200 sm:text-right sm:ml-0">
+                <p>Laravel v{{ Illuminate\Foundation\Application::VERSION }} | Made by Bruno Amat</p>
             </div>
         </div>
     </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>

@@ -27,7 +27,8 @@
         with issues/doubts or just provide your opinion in some field.</p>
     </div>
     
-    <div class="container py-4 flex flex-col items-end mb-6">
+    <div class="py-4 flex m-auto justify-center mb-3 mt-3 w-[250px] lg:w-[350px] sm:w-[400px] gap-6">
+        <a class="bg-red-600 rounded-md p-2 text-white" href="{{ url('/') }}">Back to homepage</a>
         <a class="bg-red-600 rounded-md p-2 text-white" href="{{ url('posts/create') }}">Add a post</a>
     </div>
 
