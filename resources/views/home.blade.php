@@ -17,16 +17,32 @@
         }
 
         #container-blur {
-            background: #d6d6d62d;
+            background: #ffffff1a;
             backdrop-filter: blur(18px);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         .mini-container {
-            background: #111827
+            background: #111827;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 
-        svg {
-            stroke: white;
+        .mini-container:hover {
+            border: 3px red solid;
+        }
+
+        .mini-container img {
+            pointer-events: auto; 
+        }
+
+        .mini-container:hover a {
+            background: red;
+            transition: 0.3s ease-in-out;
+            color: white;
+        }
+        
+        header a {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         }
 
 
@@ -101,31 +117,34 @@
                 width: 1200px;
             }
         }
-
     </style>
 </head>
 
 <body class="antialiased">
     <main id="background-red" class="bg-red-800 h-[420px]">
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
+        <header class="flex items-center gap-5 justify-end px-7 pt-4">
+            <a class="bg-white p-2 px-3 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Get Started</a>
+            <a class="bg-white p-2 px-3 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Sign In</a>
+        </header>
+        <div class="max-w-7xl mx-auto p-4 lg:p-8">
             <h1 class="text-7xl text-white font-bold text-center">DEVELOPERS BLOG</h1>
-            <p class="text-white text-2xl text-center mt-12">Discover. Inspire. Thrive.</p>
+            <p class="text-white text-2xl text-center mt-5">Discover. Inspire. Thrive.</p>
         </div>
-        <div id="container-blur" class="h-[600px] m-auto mt-5 rounded-xl flex justify-center items-center gap-8">
-            <div class="mini-container h-[530px] rounded-xl flex flex-col justify-center items-center p-7">
+        <div id="container-blur" class="h-[550px] m-auto mt-5 rounded-xl flex justify-center items-center gap-8">
+            <div class="mini-container h-[500px] rounded-xl flex flex-col justify-center items-center p-7">
                 <img class="w-44" src="https://img.icons8.com/external-itim2101-lineal-itim2101/256/FFFFFF/external-blog-copywriting-itim2101-lineal-itim2101.png" alt="blog_img">
                 <h1 class="text-white text-center text-2xl py-5 w-[290px]">Create your own post or just see what peaople is inspired with</h1>
-                <a class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" href="{{ url('posts') }}">Post Feed</a>
+                <a class="text-black font-medium my-3 text-lg mt-5 bg-white p-3 px-6 rounded-lg hover:bg-red-900 transition-all" href="{{ url('posts') }}">Post Feed</a>
             </div>
-            <div class="mini-container h-[530px] rounded-xl flex flex-col justify-center items-center p-7">
+            <div class="mini-container h-[500px] rounded-xl flex flex-col justify-center items-center p-7">
                 <img class="w-44" src="https://img.icons8.com/ios/256/FFFFFF/news.png" alt="blog_img">
                 <h1 class="text-white text-center text-2xl py-5 w-[290px]">Explore the recent services and the upcoming features.</h1>
-                <a class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" onclick="{{ url('') }}">Blog News</a>
+                <a class="text-black font-medium my-3 text-lg mt-5 bg-white p-3 px-6 rounded-lg transition-all" href="{{ url('') }}">Blog News</a>
             </div>
-            <div class="mini-container h-[530px] rounded-xl flex flex-col justify-center items-center p-7">
+            <div class="mini-container h-[500px] rounded-xl flex flex-col justify-center items-center p-7">
                 <img class="w-44" src="https://img.icons8.com/wired/256/FFFFFF/name.png" alt="blog_img">
                 <h1 class="text-white text-center text-2xl py-5 w-[200px]">Manage posts and customize your profile</h1>
-                <a class="text-white my-3 text-lg mt-5 bg-red-600 p-3 px-6 rounded-lg" onclick="{{ url('') }}">User Area</a>
+                <a class="text-black font-medium my-3 text-lg mt-5 bg-white p-3 px-6 rounded-lg hover:bg-red-900 transition-all" href="{{ url('') }}">User Area</a>
             </div>
         </div>
     
