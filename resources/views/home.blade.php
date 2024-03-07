@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite('resources/css/app.css')
-    <title>Dev Blog | Homepage</title>
+    <title>Sphere | Homepage</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -110,11 +110,11 @@
         /* Media query for desktop */
         @media only screen and (min-width: 1024px) {
             #container-blur .mini-container {
-                width: 360px;
+                width: 380px;
             }
 
             #container-blur {
-                width: 1200px;
+                width: 1400px;
             }
         }
     </style>
@@ -123,14 +123,14 @@
 <body class="antialiased">
     <main id="background-red" class="bg-red-800 h-[420px]">
         <header class="flex items-center gap-5 justify-end px-7 pt-4">
-            <a class="bg-white p-2 px-3 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Get Started</a>
-            <a class="bg-white p-2 px-3 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Sign In</a>
+            <a class="bg-white p-2 px-5 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="{{ url('users/create') }}">Get Started</a>
+            <a class="bg-white p-2 px-5 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Sign In</a>
         </header>
         <div class="max-w-7xl mx-auto p-4 lg:p-8">
-            <h1 class="text-7xl text-white font-bold text-center">DEVELOPERS BLOG</h1>
+            <h1 class="text-8xl text-white font-bold text-center tracking-widest">SPHERE.</h1>
             <p class="text-white text-2xl text-center mt-5">Discover. Inspire. Thrive.</p>
         </div>
-        <div id="container-blur" class="h-[550px] m-auto mt-5 rounded-xl flex justify-center items-center gap-8">
+        <div id="container-blur" class="h-[600px] m-auto mt-5 rounded-xl flex justify-center items-center gap-14">
             <div class="mini-container h-[500px] rounded-xl flex flex-col justify-center items-center p-7">
                 <img class="w-44" src="https://img.icons8.com/external-itim2101-lineal-itim2101/256/FFFFFF/external-blog-copywriting-itim2101-lineal-itim2101.png" alt="blog_img">
                 <h1 class="text-white text-center text-2xl py-5 w-[290px]">Create your own post or just see what peaople is inspired with</h1>

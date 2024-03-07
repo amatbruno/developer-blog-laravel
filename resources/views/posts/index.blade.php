@@ -48,16 +48,33 @@
                     <p class="text-gray-300 text-xl font-semibold">Writted by {{ $pt->id }}</p>
                     <p class="text-gray-400 text-md">Published at {{ $pt->publish_date }}</p>
                 </div>
-                <a href="{{ url('/posts/'.$pt->id.'/edit') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" 
-                        class="hover:stroke-red-600 transition-all" width="24" height="24" 
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" 
-                        stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" 
-                        fill="none"/>
-                        <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-                        <path d="M13.5 6.5l4 4" />
-                    </svg>
-                </a>
+                <div class="flex flex-col items-center gap-4">
+                    <a href="{{ url('/posts/'.$pt->id.'/edit') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            class="hover:stroke-gray-400 transition-all" width="24" height="24" 
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" 
+                            stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" 
+                            fill="none"/>
+                            <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                            <path d="M13.5 6.5l4 4" />
+                        </svg>
+                    </a>
+                    <form action="{{ url('/posts/'.$pt->id) }}" method="POST">
+                        @method("DELETE")
+                        @csrf
+                        <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" 
+                                class="hover:stroke-red-600 transition-all" 
+                                width="24" height="24" viewBox="0 0 24 24" 
+                                stroke-width="1.5" stroke="currentColor" 
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M4 7l16 0" /><path d="M10 11l0 6" />
+                                <path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
             <hr>
             <h3 class="mt-6 text-xl mb-6">{{ $pt->content }}</h3>
