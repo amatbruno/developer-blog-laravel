@@ -124,7 +124,7 @@
     <main id="background-red" class="bg-red-800 h-[420px]">
         <header class="flex items-center gap-5 justify-end px-7 pt-4">
             <a class="bg-white p-2 px-5 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="{{ url('users/create') }}">Get Started</a>
-            <a class="bg-white p-2 px-5 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="#">Sign In</a>
+            <a class="bg-white p-2 px-5 rounded-lg font-semibold hover:bg-slate-200 transition-all" href="{{ url('users/login') }}">Sign In</a>
         </header>
         <div class="max-w-7xl mx-auto p-4 lg:p-8">
             <h1 class="text-8xl text-white font-bold text-center tracking-widest">SPHERE.</h1>

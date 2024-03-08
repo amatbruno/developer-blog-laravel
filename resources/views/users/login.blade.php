@@ -20,7 +20,7 @@
 </style>
 @endpush
 
-@section('title', 'Registration | Blog')
+@section('title', 'Login | Blog')
 @section('contenido')
 <header class="bg-red-800 py-4">
     <nav class="flex justify-around items-center">

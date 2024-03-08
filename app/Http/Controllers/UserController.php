@@ -16,6 +16,14 @@ class UserController extends Controller
     }
 
     /**
+     * Show the form for accesing a new resource.
+     */
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
